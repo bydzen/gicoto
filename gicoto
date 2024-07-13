@@ -10,7 +10,7 @@ fi
 git add $files
 
 # Enter commit date
-read -p "Enter commit date (YYYY-MM-DD) [default: today]: " custom_date
+read -p "Enter commit date (default: today): " custom_date
 if [ -z "$custom_date" ]; then
   custom_date=$(date +"%Y-%m-%d")
 fi
