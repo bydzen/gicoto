@@ -1,0 +1,18 @@
+How to Install on Linux Machine
+
+Steps:
+1. Save the script as `gicoto`.
+2. Make the script executable: chmod +x gicoto
+3. Copy the script to a directory in your PATH (e.g., /usr/bin/):
+   sudo cp gicoto /usr/bin/
+4. Ensure `fzf` is installed. Install it using your package manager:
+   - Debian/Ubuntu: sudo apt install fzf
+   - macOS: brew install fzf
+
+Usage:
+gicoto
+
+Help:
+gicoto --help
+
+Enjoy.

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Interactive file selection
+echo "Select files to stage (space-separated):"
+files=$(git status --short | fzf --multi | awk '{print $2}')
+if [ -z "$files" ]; then
+  echo "No files selected. Exiting."
+  exit 1
+fi
+git add $files
+
+# Enter commit date
+read -p "Enter commit date (YYYY-MM-DD) [default: today]: " custom_date
+if [ -z "$custom_date" ]; then
+  custom_date=$(date +"%Y-%m-%d")
+fi
+
+# Enter commit message
+read -p "Enter commit message: " message
+
+# Commit with custom date using --date
+git commit --date="$custom_date" -m "$message"
+
+# Push changes
+git push
+
+echo "Changes have been pushed successfully 🚀"
